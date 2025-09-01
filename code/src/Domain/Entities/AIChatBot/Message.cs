@@ -3,6 +3,8 @@ public class Message : BaseAuditableEntity
 {
     public string Content { get; set; } = string.Empty;
     public int RoleId { get; set; } // "user", "assistant", "system"
+    public int AIToolId { get; set; }
+    public int AIToolModelId { get; set; }
     public int ConversationId { get; set; }
     public Conversation Conversation { get; set; } = default!;
 }
