@@ -6,6 +6,7 @@ using OpenProfileAPI.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using OpenProfileAPI.Domain.Entities.AIChatBot;
 
 namespace OpenProfileAPI.Infrastructure.Data;
 
@@ -26,6 +27,10 @@ public class ApplicationDbContext : IdentityDbContext<User, IdentityRole<int>, i
     public DbSet<EntityType> EntityType => Set<EntityType>();
     public DbSet<UserFile> UserFile => Set<UserFile>();
     public DbSet<FileStore> FileStore => Set<FileStore>();
+
+    public DbSet<Conversation> Conversation => Set<Conversation>();
+    public DbSet<Message> Message => Set<Message>();
+
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

@@ -1,4 +1,5 @@
 ﻿using OpenProfileAPI.Domain.Entities;
+using OpenProfileAPI.Domain.Entities.AIChatBot;
 using AuthPolicyModel = OpenProfileAPI.Domain.Entities.AuthPolicy;
 
 namespace OpenProfileAPI.Application.Common.Interfaces;
@@ -18,5 +19,7 @@ public interface IApplicationDbContext
     DbSet<EntityType> EntityType { get; }
     DbSet<UserFile> UserFile { get; }
     DbSet<FileStore> FileStore { get; }
+    DbSet<Conversation> Conversation { get; }
+    DbSet<Message> Message { get; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }
